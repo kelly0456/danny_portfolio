@@ -1,0 +1,434 @@
+/* Import Google Font for consistent typography */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+
+/* ====== Variables for Theme Consistency ====== */
+:root {
+    --color-primary: #0a1f44; /* Dark Navy/Primary */
+    --color-secondary: #005b96; /* Mid Blue/Accent */
+    --color-accent: #ffd700; /* Gold/Highlight */
+    --color-background: #f8f9fa; /* Light Gray Background */
+    --color-text: #343a40; /* Dark Text */
+    --color-border: #e9ecef; /* Light Border */
+}
+
+/* ====== Global Resets & Typography ====== */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background: var(--color-background);
+    color: var(--color-text);
+    line-height: 1.6;
+    text-align: left;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 1.8em;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--color-border);
+    padding-bottom: 5px;
+}
+
+/* Main Content Container */
+.container, .services-container, .experience-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background: var(--color-border);
+    margin: 40px 0;
+}
+
+/* ====== Header & Navigation ====== */
+header {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: #fff;
+    padding: 30px 10px;
+    text-align: center;
+}
+
+header h1 {
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.tagline {
+    margin: 0 0 15px 0;
+    font-weight: 300;
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+/* Contact Info (Header) */
+.contact-info {
+    margin-bottom: 15px;
+    font-size: 0.9em;
+}
+
+.contact-info a {
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.contact-info a:hover {
+    opacity: 1;
+}
+
+nav {
+    margin-top: 15px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 600;
+    transition: color 0.3s, border-bottom 0.3s;
+    padding-bottom: 5px;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--color-accent);
+    border-bottom: 2px solid var(--color-accent);
+}
+
+/* ====== Call to Action Button ====== */
+.button-cta {
+    display: inline-block;
+    background: var(--color-secondary);
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: 600;
+    margin-top: 25px;
+    transition: background 0.3s, transform 0.2s;
+    border: none;
+}
+
+.button-cta:hover {
+    background: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ====== Home Page Layout (Hero Section) ====== */
+.hero-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 0;
+    text-align: left;
+    gap: 40px;
+}
+
+.hero-content {
+    flex: 2;
+    min-width: 300px;
+}
+
+.hero-content h2 {
+    font-size: 2em;
+    border-bottom: none;
+}
+
+/* ====== Rotating Ring Animation (MAINTAINED) ====== */
+.image-ring {
+    flex: 1;
+    position: relative;
+    margin: 20px auto; 
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    min-width: 200px;
+}
+
+.center-image {
+    width: 230px;
+    height: 300px;
+    border-radius: 40%;
+    position: absolute;
+    top: 80px;
+    left: 5px;
+    z-index: 10;
+    border: 4px solid #fff; 
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+    object-fit: cover;
+}
+
+.rotating-text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* Note: The JS in index.html overrides this, but this serves as a fallback */
+    animation: rotate 10s linear infinite; 
+}
+
+.rotating-text span {
+    position: absolute;
+    font-size: 14px;
+    color: var(--color-secondary);
+    transform-origin: 100px 100px; 
+    font-weight: 600;
+}
+
+/* Positioning for the 5-item ring */
+.rotating-text span:nth-child(1) { transform: rotate(0deg) translate(100px); }
+.rotating-text span:nth-child(2) { transform: rotate(72deg) translate(100px); }
+.rotating-text span:nth-child(3) { transform: rotate(144deg) translate(100px); }
+.rotating-text span:nth-child(4) { transform: rotate(216deg) translate(100px); }
+.rotating-text span:nth-child(5) { transform: rotate(288deg) translate(100px); }
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ====== Core Competency List (Pill Style) ====== */
+.competency-list, .specialties-list {
+    list-style: none; 
+    padding: 0;
+    display: flex; 
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.competency-list li, .specialties-list li {
+    background: var(--color-border); 
+    color: var(--color-primary);
+    padding: 8px 15px;
+    border-radius: 20px; 
+    font-weight: 600;
+    font-size: 0.9em;
+    border: 1px solid #dcdcdc;
+    transition: background 0.3s;
+}
+
+.competency-list li:hover, .specialties-list li:hover {
+    background: #d1d9e2;
+}
+
+/* ====== Services Page Layout (Card Grid) ====== */
+.intro-banner {
+    padding: 20px 0;
+    text-align: center;
+}
+
+.intro-banner p {
+    max-width: 800px;
+    margin: 10px auto 30px auto;
+}
+
+.section-title {
+    color: var(--color-secondary);
+    font-size: 1.6em;
+    margin-top: 30px;
+    text-align: center;
+    border-bottom: 2px solid var(--color-secondary);
+    padding-bottom: 8px;
+}
+
+.section-description {
+    text-align: center;
+    font-style: italic;
+    color: #6c757d;
+    margin-bottom: 30px;
+}
+
+.service-cards-grid {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    padding-bottom: 20px;
+}
+
+.service-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-top: 5px solid var(--color-secondary);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-card h3 {
+    color: var(--color-primary);
+    margin-top: 0;
+    font-size: 1.3em;
+}
+
+.service-card ul {
+    padding-left: 20px;
+    list-style-type: '— '; /* Custom bullet point for modern look */
+}
+
+/* ====== Experience Page Layout (Timeline Blocks) ====== */
+.page-intro {
+    padding: 20px 0;
+    text-align: center;
+}
+
+.job-block {
+    background: #fff;
+    padding: 25px;
+    border-left: 4px solid var(--color-secondary);
+    border-radius: 4px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 5px;
+}
+
+.job-block h3 {
+    margin: 0;
+    font-size: 1.4em;
+    color: var(--color-secondary);
+}
+
+.dates {
+    font-weight: 600;
+    color: var(--color-primary);
+    font-size: 0.95em;
+    white-space: nowrap; /* Prevent dates from wrapping */
+}
+
+.company {
+    font-style: italic;
+    color: #6c757d;
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+
+.job-block ul {
+    padding-left: 20px;
+}
+
+.job-block ul li {
+    margin-bottom: 5px;
+}
+
+.timeline-separator {
+    background: var(--color-border);
+    height: 1px;
+    margin: 30px 0;
+}
+
+/* ====== About Page Layout (Credentials) ====== */
+#credentials {
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+    flex-wrap: wrap; /* Ensures stacking on small screens */
+    margin-top: 30px;
+}
+
+.credential-group {
+    flex: 1;
+    min-width: 300px;
+}
+
+.credential-group h3 {
+    border-bottom: 2px solid var(--color-secondary);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.institution {
+    font-style: italic;
+    color: #6c757d;
+}
+
+.cert-list {
+    padding-left: 20px;
+}
+
+/* Call to Action Section */
+#contact-cta {
+    text-align: center;
+    margin: 60px 0;
+    padding: 30px;
+    background: #e9f0f6; /* Subtle background for the CTA section */
+    border-radius: 8px;
+}
+
+/* ====== Footer ====== */
+footer {
+    background: var(--color-primary);
+    color: #ced4da;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9em;
+    margin-top: 50px;
+}
+
+/* ====== Responsive Adjustments ====== */
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        order: 2; /* Put content below the image ring on mobile */
+    }
+
+    .image-ring {
+        order: 1;
+        margin-bottom: 30px;
+    }
+    
+    .job-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dates {
+        margin-top: 5px;
+        font-size: 0.9em;
+        opacity: 0.8;
+    }
+    
+    #credentials {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .competency-list, .specialties-list {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8em;
+    }
+    
+    .job-block {
+        padding: 15px;
+    }
+}
