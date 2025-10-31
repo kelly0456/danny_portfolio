@@ -1,27 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | Daniel Atianyi</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Daniel Atianyi</h1>
+    <button class="menu-toggle" id="menu-toggle-btn" aria-controls="main-nav" aria-expanded="false">&#9776;</button>
         <p class="tagline">Cybersecurity Risk Analyst</p>
-        <nav>
+    <nav id="main-nav">
             <a href="index.html">Home</a>
             <a href="services.html">Services</a>
             <a href="experience.html">Experience</a>
             <a href="about.html">About</a>
-            <a href="projects.html" class="active">Projects</a> 
+            <a href="projects.html" class="active">Projects</a>
         </nav>
     </header>
 
-    <main class="container"> 
-        
+    <main class="container">
+
         <section id="specialties">
             <h2>Policy Development & Cybersecurity Specialties</h2>
             <p class="summary-paragraph">
@@ -60,16 +64,17 @@
                 </ul>
             </div>
         </section>
-        
-        <hr> 
+
+        <hr>
 
         <section id="contact-cta">
             <h2>Let's Connect</h2>
-            <p>I am currently available for new projects and collaborations. Connect with me directly for detailed inquiries.</p>
-      <a href="mailto:Datianyi@gmail.com?subject=Service%20Inquiry&body=Hello%20Daniel%20Atianyi,%0A%0AI%E2%80%99m%20interested%20in%20your%20service.%0A%0ARegards," 
-   class="button-cta">
-   Email Daniel Atianyi
-</a>
+            <p>I am currently available for new projects and collaborations. Connect with me directly for detailed
+                inquiries.</p>
+            <a href="mailto:Datianyi@gmail.com?subject=Service%20Inquiry&body=Hello%20Daniel%20Atianyi,%0A%0AI%E2%80%99m%20interested%20in%20your%20service.%0A%0ARegards,"
+                class="button-cta">
+                Email Daniel Atianyi
+            </a>
 
         </section>
     </main>
@@ -77,5 +82,7 @@
     <footer>
         &copy; 2025 Daniel Atianyi | Cybersecurity Risk Analyst
     </footer>
+    <script src="menu-toggle.js"></script>
 </body>
+
 </html>
