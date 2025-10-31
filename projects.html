@@ -8,23 +8,26 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Daniel Atianyi</h1>
-        <p class="tagline">Project Portfolio: Applied Risk & Compliance</p>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="services.html">Services</a>
-            <a href="experience.html">Experience</a>
-            <a href="about.html">About</a>
-            <a href="projects.html" class="active">Projects</a> 
-        </nav>
-    </header>
+  <header>
+  <h1>Daniel Atianyi</h1>
+  <button class="menu-toggle" id="menu-toggle-btn" aria-controls="main-nav" aria-expanded="false">&#9776;</button>
+  <p class="tagline">Cybersecurity Risk Analyst</p>
+
+  <nav id="main-nav">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="experience.html">Experience</a>
+  <a href="about.html">About</a>
+  <a href="projects.html" class="active">Projects</a>
+  </nav>
+</header>
+
 
     <main class="projects-container">
         
         <section class="page-intro">
             <h2>Selected Projects & Case Studies</h2>
-            <p>A showcase of impactful projects demonstrating expertise in **NIST framework implementation, GRC strategy, and cloud security hardening**.</p>
+            <p>A showcase of impactful projects demonstrating expertise in <strong>NIST framework implementation, GRC strategy, and cloud security hardening</strong>.</p>
         </section>
 
         <section id="project-list" class="projects-grid">
@@ -48,7 +51,7 @@
 
             <article class="project-card">
                 <h3 class="project-title">Tabletop Exercise_DNS Flood & international Host breach</h3>
-                <p class="project-meta">Client: Major Tech Retailer | Focus: **SIEM & Behavioral Analytics**</p>
+                <p class="project-meta">Client: Major Tech Retailer | Focus: <strong>SIEM &amp; Behavioral Analytics</strong></p>
                 <p class="project-summary">Implemented an advanced SIEM and EDR system, reducing the average time-to-detect insider threat activity by over 60%.</p>
                 <div class="project-tags">
                     <span class="tag">Threat Analysis</span>
@@ -60,7 +63,7 @@
 
             <article class="project-card">
                 <h3 class="project-title">vulnerability assessment project</h3>
-                <p class="project-meta">Focus: **GDPR & HIPAA** Readiness | Tools: Python/Automation</p>
+                <p class="project-meta">Focus: <strong>GDPR &amp; HIPAA</strong> Readiness | Tools: Python/Automation</p>
                 <p class="project-summary">Automated core audit log reviews for business-critical applications, ensuring continuous compliance assurance for key regulations.</p>
                 <div class="project-tags">
                     <span class="tag">Compliance</span>
@@ -82,5 +85,7 @@
     <footer>
         &copy; 2025 Daniel Atianyi | Cybersecurity Risk Analyst
     </footer>
+    <script src="menu-toggle.js"></script>
+
 </body>
 </html>
